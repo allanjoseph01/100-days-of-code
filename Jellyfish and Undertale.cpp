@@ -10,25 +10,21 @@ int main(){
 		for(int i=0;i<n;i++){
 			cin >> arr[i];
 		}
-		if(a==1){
-			cout << "1" << endl;
-		}else{
-			sort(arr,arr+n);
-			int j=0;
-			long long count=0;
-			while(j<n){
-				if(b==1){
-					b=min(a,b+arr[j]);
-					count+=1;
-					b-=1;
-					j+=1;
-				}else{
-					count+=(b-1);
-					b=1;
-				}
+		sort(arr,arr+n);
+		int j=0;
+		long long count=0;
+		while(j<n){
+			if(b==1){
+				b=min(a,b+arr[j]);
+				count+=1;
+				b-=1;
+				j+=1;
+			}else{
+				count+=(b-1);
+				b=1;
 			}
-			count+=b;
-			cout << count << endl;
 		}
+		count+=b;
+		cout << count << endl;
 	}
 }

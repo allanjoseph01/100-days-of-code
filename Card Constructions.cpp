@@ -8,30 +8,21 @@ pair<bool,long long> check(long long b,long long to){
 		ret.second=-1;
 		return ret;
 	}
-	long long num=b-1;
-	to-=(b*2);
-	if(to<0){
+	d-=(b*2);
+	if(d<0){
 		ret.first=false;
 		ret.second=-1;
 		return ret;
 	}
-	while(to>0 && num>=1){
-		to-=(num*3);
-		num-=1;
-		if(to<0){
-			ret.first=false;
-			ret.second=-1;
-			return ret;
-		}
-	}
-	if(num==0 && to>=0){
+	long long nc=(2*b)+(3*(((b-1)*(b))/2));
+	if(to<nc){
+		ret.first=false;
+		ret.second=-1;
+	}else{
 		ret.first=true;
-		ret.second=(to);
-		return ret;
+		ret.second=(to-nc);
 	}
-	ret.first=false;
-    ret.second=-1;
-    return ret;
+	return ret;
 }
 int main(){
 	int t;

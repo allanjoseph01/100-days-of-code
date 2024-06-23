@@ -15,7 +15,7 @@ bool check(long long be){
 			break;
 		}
 	}
-	return count>=(k+1);
+	return count>=(k);
 }
 int main(){
 	ios::sync_with_stdio(false);
